@@ -8,8 +8,9 @@ public class EjerciciosBasicos {
         ej2();
         ej3();
         ej4();
-        ej5();*/
-        ej6();
+        ej5();
+        ej6();*/
+        ej7();
     }
 
     //Ejercicio 1. Escribe un programa en el que se declaren las variables enteras x e y. Asignales
@@ -70,6 +71,15 @@ public class EjerciciosBasicos {
         double importeFinal = (baseImponible - restaIrpf);
         System.out.println(importeFinal);
     }
+
+    public static void ej7() {
+        final double PI = 3.1416;
+        System.out.println("Ingrese el radio del circulo: ");
+        double radioCirculo = sc.nextDouble();
+        radioCirculo = Math.pow(radioCirculo, 2);
+        System.out.println("El area es: "+PI * radioCirculo);
+    }
+
     //Metodos que me ayudan a la hora de reutilizar el codigo
     public static int suma(int x, int y) {
         return (x + y);
@@ -88,7 +98,6 @@ public class EjerciciosBasicos {
     }
 
     public static double pedirDouble() {
-        double x = sc.nextDouble();
-        return x;
+        return sc.nextDouble();
     }
 }

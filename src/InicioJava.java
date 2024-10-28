@@ -91,15 +91,15 @@ public class InicioJava {
 
         //le damos la vuelta al número
         aux = numero;
-        while (aux!=0){
+        while (aux != 0) {
             cifra = aux % 10;
             inverso = inverso * 10 + cifra;
             aux = aux / 10;
         }
 
-        if(numero == inverso){
+        if (numero == inverso) {
             System.out.println("Es capicua");
-        }else{
+        } else {
             System.out.println("No es capicua");
         }
     }
@@ -155,10 +155,11 @@ public class InicioJava {
 
         System.out.println("Número invertido: " + invertido);
     }
+
     //Dada una secuencia de números enteros acabada en 0, obtener la suma de
     //aquellos números tales que su número de cifras sea igual a la suma de las
     //mismas. Entrada: 1 5 111 66 201 273 0 | Salida: 1 + 111 + 201= 313
-    public static void ej8(){
+    public static void ej8() {
         ArrayList<char[]> numeros = new ArrayList<>();
         ArrayList<Integer> numerosSeleccionados = new ArrayList<>();
         StringBuilder numerosSumados = new StringBuilder();
@@ -181,15 +182,15 @@ public class InicioJava {
                 numerosSeleccionados.add(Integer.parseInt(String.valueOf(numero)));
             }
         }
-        for(Integer numero : numerosSeleccionados) {
+        for (Integer numero : numerosSeleccionados) {
             sumarNumeros += numero;
             if (numerosSeleccionados.indexOf(numero) == numerosSeleccionados.size() - 1) {
                 numerosSumados.append(numero);
-            }else {
+            } else {
                 numerosSumados.append(numero + " + ");
             }
         }
-        System.out.println(numerosSumados+"= "+sumarNumeros);
+        System.out.println(numerosSumados + "= " + sumarNumeros);
     }
 }
 
