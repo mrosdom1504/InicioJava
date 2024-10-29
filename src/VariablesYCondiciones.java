@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -23,8 +24,10 @@ public class VariablesYCondiciones {
         ej13();
         ej14();
         ej15();
-        ej16();*/
+        ej16();
         ej17();
+        ej18();*/
+        ej19();
         //true,false,false,true,false,true,false
     }
 
@@ -120,7 +123,7 @@ public class VariablesYCondiciones {
         int n2 = pedirInt();
         int[] numeros = {n1, n2};
         Arrays.sort(numeros);
-        System.out.println(numeros[1]+">"+numeros[0]);
+        System.out.println(numeros[1] + ">" + numeros[0]);
     }
 
     //10. Pedir tres números y mostrarlos ordenados de mayor a menor.
@@ -133,32 +136,35 @@ public class VariablesYCondiciones {
         int n3 = pedirInt();
         int[] numeros = {n1, n2, n3};
         Arrays.sort(numeros);
-        System.out.println(numeros[2]+">"+numeros[1]+">"+numeros[0]);
+        System.out.println(numeros[2] + ">" + numeros[1] + ">" + numeros[0]);
     }
+
     //11. Pedir un número entre 0 y 9.999 y decir cuantas cifras tiene
-    public static void ej11(){
+    public static void ej11() {
         int contador = 0;
         System.out.println("Ingrese un numero del 0 al 9.999: ");
         char[] numeroElegido = sc.nextLine().toCharArray();
-        for(char cifra: numeroElegido){
+        for (char cifra : numeroElegido) {
             contador += 1;
         }
-        System.out.println("Este numero tiene "+contador+" cifras");
+        System.out.println("Este numero tiene " + contador + " cifras");
 
 
     }
+
     //12. Pedir un número entre 0 y 9.999 y mostrarlo con las cifras al revés.
-    public static void ej12(){
-        String numeroAlReves ="";
+    public static void ej12() {
+        String numeroAlReves = "";
         System.out.println("Ingrese un numero entre 0 y 9.999: ");
         char[] numero = sc.nextLine().toCharArray();
-        for(int i = numero.length-1; i>=0;i--){
+        for (int i = numero.length - 1; i >= 0; i--) {
             numeroAlReves += numero[i];
         }
         System.out.println(numeroAlReves);
     }
+
     //13. Pedir un número entre 0 y 9.999, decir si es capicúa.
-    public static void ej13(){
+    public static void ej13() {
         int numero;
         int aux;
         int inverso = 0;
@@ -181,14 +187,15 @@ public class VariablesYCondiciones {
             System.out.println("No es capicua");
         }
     }
+
     //14. Pedir una nota de 0 a 10 y mostrarla de la forma: Insuficiente, Suficiente, Bien...
-    public static void ej14(){
+    public static void ej14() {
         System.out.println("Ingrese una nota del 0 al 10: ");
         double nota = pedirDouble();
-        if(nota>10 || nota<0)
+        if (nota > 10 || nota < 0)
             System.out.println("Debe ser entre 0 y 10");
-        switch ((int)nota){
-            case 0,1,2,3,4:
+        switch ((int) nota) {
+            case 0, 1, 2, 3, 4:
                 System.out.println("Insuficiente");
                 break;
             case 5:
@@ -197,75 +204,111 @@ public class VariablesYCondiciones {
             case 6:
                 System.out.println("Bien");
                 break;
-            case 7,8:
+            case 7, 8:
                 System.out.println("Notable");
                 break;
-            case 9,10:
+            case 9, 10:
                 System.out.println("Sobresaliente");
                 break;
         }
     }
+
     //15. Pedir el día, mes y año de una fecha e indicar si la fecha es correcta. Suponiendo todos
     //los meses de 30 días
-    public static void ej15(){
+    public static void ej15() {
         System.out.println("Dia del mes: ");
         int dia = pedirInt();
         System.out.println("Mes del año: ");
         int mes = pedirInt();
         System.out.println("Año: ");
         int anio = pedirInt();
-        if(dia<1 || dia>30 || mes<1 || mes>12 || anio<1)
+        if (dia < 1 || dia > 30 || mes < 1 || mes > 12 || anio < 1)
             System.out.println("Fecha incorrecta");
         else
             System.out.println("Fecha correcta");
     }
+
     //16. Pedir el día, mes y año de una fecha e indicar si la fecha es correcta. Con meses de 28,
     //30 y 31 días. Sin años bisiestos.
-    public static void ej16(){
+    public static void ej16() {
         System.out.println("Dia del mes: ");
         int dia = pedirInt();
         System.out.println("Mes del año: ");
         int mes = pedirInt();
         System.out.println("Año: ");
         int anio = pedirInt();
-        switch (mes){
+        switch (mes) {
             case 2:
-                if(dia>28||dia<1)
+                if (dia > 28 || dia < 1)
                     System.out.println("Fecha incorrecta");
                 else
                     System.out.println("Fecha correcta");
                 break;
-            case 1,3,5,7,8,10,12:
-                if(dia>31||dia<1)
+            case 1, 3, 5, 7, 8, 10, 12:
+                if (dia > 31 || dia < 1)
                     System.out.println("Fecha incorrecta");
                 else
                     System.out.println("Fecha correcta");
                 break;
-            case 4,6,9,11:
-                if(dia>30||dia<1)
+            case 4, 6, 9, 11:
+                if (dia > 30 || dia < 1)
                     System.out.println("Fecha incorrecta");
                 else
                     System.out.println("Fecha correcta");
                 break;
         }
     }
+
     //17. Pedir el día, mes y año de una fecha correcta y mostrar la fecha del día siguiente.
     //suponer que todos los meses tienen 30 días.
-    public static void ej17(){
+    public static void ej17() {
         System.out.println("Ingresa el dia");
         int dia = pedirInt();
         System.out.println("Ingresa el mes");
         int mes = pedirInt();
         System.out.println("Ingresa el año");
         int anio = pedirInt();
+        LocalDate fecha = LocalDate.of(anio, mes, dia);
+        fecha = fecha.plusDays(1);
+        System.out.println(fecha);
     }
-    public static void ej18(){
-
+    //18. Ídem que el ej. 17, suponiendo que cada mes tiene un número distinto de días (suponer
+    //que febrero tiene siempre 28 días)
+    public static void ej18() {
+        System.out.println("Ingresa el dia");
+        int dia = pedirInt();
+        System.out.println("Ingresa el mes");
+        int mes = pedirInt();
+        System.out.println("Ingresa el año");
+        int anio = pedirInt();
+        LocalDate fecha = LocalDate.of(anio, mes, dia);
+        fecha = fecha.plusDays(1);
+        System.out.println(fecha);
+    }
+    //19. Pedir dos fechas y mostrar el número de días que hay de diferencia. Suponiendo todos
+    //los meses de 30 días
+    public static void ej19() {
+        System.out.println("Ingresa el dia");
+        int dia = pedirInt();
+        System.out.println("Ingresa el mes");
+        int mes = pedirInt();
+        System.out.println("Ingresa el ano");
+        int ano = pedirInt();
+        LocalDate fecha = LocalDate.of(ano, mes, dia);
+        System.out.println("Ingresa el dia");
+        dia = pedirInt();
+        System.out.println("Ingresa el mes");
+        mes = pedirInt();
+        System.out.println("Ingresa el ano");
+        ano = pedirInt();
+        LocalDate fecha1 = LocalDate.of(ano, mes, dia);
+        System.out.println(fecha.compareTo(fecha1));
     }
     public static double pedirDouble() {
         return sc.nextDouble();
     }
-    public static int pedirInt(){
+
+    public static int pedirInt() {
         return sc.nextInt();
     }
 }
