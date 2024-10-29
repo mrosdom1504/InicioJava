@@ -249,7 +249,17 @@ public class VariablesYCondiciones {
                 break;
         }
     }
+    //17. Pedir el día, mes y año de una fecha correcta y mostrar la fecha del día siguiente.
+    //suponer que todos los meses tienen 30 días.
     public static void ej17(){
+        System.out.println("Ingresa el dia");
+        int dia = pedirInt();
+        System.out.println("Ingresa el mes");
+        int mes = pedirInt();
+        System.out.println("Ingresa el año");
+        int anio = pedirInt();
+    }
+    public static void ej18(){
 
     }
     public static double pedirDouble() {
