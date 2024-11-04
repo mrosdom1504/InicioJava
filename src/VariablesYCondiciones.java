@@ -18,7 +18,7 @@ public class VariablesYCondiciones {
         ej7();
         ej8();
         ej9();
-        ej10();
+        ej10();*/
         ej11();
         ej12();
         ej13();
@@ -26,7 +26,7 @@ public class VariablesYCondiciones {
         ej15();
         ej16();
         ej17();
-        ej18();*/
+        ej18();
         ej19();
         //true,false,false,true,false,true,false
     }
@@ -148,8 +148,6 @@ public class VariablesYCondiciones {
             contador += 1;
         }
         System.out.println("Este numero tiene " + contador + " cifras");
-
-
     }
 
     //12. Pedir un número entre 0 y 9.999 y mostrarlo con las cifras al revés.
@@ -272,6 +270,7 @@ public class VariablesYCondiciones {
         fecha = fecha.plusDays(1);
         System.out.println(fecha);
     }
+
     //18. Ídem que el ej. 17, suponiendo que cada mes tiene un número distinto de días (suponer
     //que febrero tiene siempre 28 días)
     public static void ej18() {
@@ -285,6 +284,7 @@ public class VariablesYCondiciones {
         fecha = fecha.plusDays(1);
         System.out.println(fecha);
     }
+
     //19. Pedir dos fechas y mostrar el número de días que hay de diferencia. Suponiendo todos
     //los meses de 30 días
     public static void ej19() {
@@ -304,6 +304,7 @@ public class VariablesYCondiciones {
         LocalDate fecha1 = LocalDate.of(ano, mes, dia);
         System.out.println(fecha.compareTo(fecha1));
     }
+
     public static double pedirDouble() {
         return sc.nextDouble();
     }

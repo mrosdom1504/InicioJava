@@ -12,7 +12,9 @@ public class InicioJava {
         //ej5();
         //ej6();
         //ej7();
-        ej8();
+        //ej8();
+        //ej9();
+        ej10();
     }
 
     //Leer una cantidad ‘N’ y luego introducir ‘N’ números enteros. Se pide imprimir
@@ -192,6 +194,45 @@ public class InicioJava {
         }
         System.out.println(numerosSumados + "= " + sumarNumeros);
     }
+
+    //9. Crea un programa que reciba un carácter. Si el carácter está en minúsculas,
+    //debe imprimir en pantalla el mismo carácter en mayúsculas, y viceversa. La
+    //única función de la clase String que se puede utilizar es CharAt().
+    public static void ej9() {
+        char caracter;
+        System.out.println("Introduce un caracter: ");
+        caracter = sc.next().charAt(0);
+        if (caracter == Character.toUpperCase(caracter)) {
+            System.out.println("El caracter es mayuscula: " + caracter);
+        } else
+            System.out.println("El caracter no es mayuscula: " + caracter);
+    }
+
+    //10.Crea un programa en JAVA que dibuje N-1 cuadrados de lado 2 hasta lado N.
+    //Es decir, de pequeño a grande. Los cuadrados estarán formados por el
+    //carácter que hace referencia a la longitud del lado.
+    public static void ej10() {
+        int altura;
+        System.out.println("Introduce un altura: ");
+        altura = sc.nextInt();
+        for (int i = 1; i <= altura; i++) {
+            System.out.println();
+            for (int k = 1; altura >= k; k++) {
+                System.out.print(altura);
+            }
+        }
+        while (altura > 2) {
+            altura--;
+            for (int j = 1; j <= altura; j++) {
+                System.out.println();
+                for (int k = 1; altura >= k; k++) {
+                    System.out.print(altura);
+                }
+            }
+        }
+    }
 }
+
+
 
 
