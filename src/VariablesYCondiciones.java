@@ -1,6 +1,10 @@
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.chrono.ChronoLocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Scanner;
 
 import static java.lang.String.valueOf;
@@ -27,7 +31,9 @@ public class VariablesYCondiciones {
         ej16();
         ej17();
         ej18();
-        ej19();*/
+        ej19();
+        ej20();*/
+        ej21();
         ej22();
         //true,false,false,true,false,true,false
     }
@@ -305,6 +311,61 @@ public class VariablesYCondiciones {
         LocalDate fecha1 = LocalDate.of(ano, mes, dia);
         System.out.println(fecha.compareTo(fecha1));
     }
+    //20. Pedir una hora de la forma hora, minutos y segundos, y mostrar la hora en el segundo
+    //siguiente.
+    public static void ej20() {
+        System.out.println("Ingresa la hora: ");
+        int hora = pedirInt();
+        System.out.println("Ingresa los minutos: ");
+        int minuto = pedirInt();
+        System.out.println("Ingresa los segundos: ");
+        int segundo = pedirInt();
+        LocalTime hora1 = LocalTime.of(hora, minuto, segundo);
+        System.out.println(hora1.plusSeconds(1));
+    }
+    //21. Pedir una nota numérica entera entre 0 y 10, y mostrar dicha nota de la forma: cero,
+    //uno, dos, tres...
+    public static void ej21() {
+        System.out.println("Ingrese su nota: ");
+        int nota = pedirInt();
+        switch (nota) {
+            case 0:
+                System.out.println("Cero");
+                break;
+            case 1:
+                System.out.println("Uno");
+                break;
+            case 2:
+                System.out.println("Dos");
+                break;
+            case 3:
+                System.out.println("Tres");
+                break;
+            case 4:
+                System.out.println("Cuatro");
+                break;
+            case 5:
+                System.out.println("Cinco");
+                break;
+            case 6:
+                System.out.println("Seis");
+                break;
+            case 7:
+                System.out.println("Siete");
+                break;
+            case 8:
+                System.out.println("Ocho");
+                break;
+            case 9:
+                System.out.println("Nueve");
+                break;
+            case 10:
+                System.out.println("Diez");
+                break;
+            default:
+                System.out.println("Escribe bien la nota.");
+        }
+    }
     public static void ej22(){
         System.out.println("Ingresa el numero: ");
         int numero = pedirInt();
@@ -359,7 +420,7 @@ public class VariablesYCondiciones {
                 System.out.print("Cincuenta");
                 break;
             case 6:
-                System.out.println("Sesenta");
+                System.out.print("Sesenta");
                 break;
             case 7:
                 System.out.print("Setenta");
