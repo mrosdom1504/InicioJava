@@ -18,7 +18,7 @@ public class VariablesYCondiciones {
         ej7();
         ej8();
         ej9();
-        ej10();*/
+        ej10();
         ej11();
         ej12();
         ej13();
@@ -27,7 +27,8 @@ public class VariablesYCondiciones {
         ej16();
         ej17();
         ej18();
-        ej19();
+        ej19();*/
+        ej22();
         //true,false,false,true,false,true,false
     }
 
@@ -303,6 +304,105 @@ public class VariablesYCondiciones {
         ano = pedirInt();
         LocalDate fecha1 = LocalDate.of(ano, mes, dia);
         System.out.println(fecha.compareTo(fecha1));
+    }
+    public static void ej22(){
+        System.out.println("Ingresa el numero: ");
+        int numero = pedirInt();
+        int decenas = numero / 10;
+        int unidades = numero % 10;
+        if(numero>10 && numero<20) {
+            switch (numero) {
+                case 11:
+                    System.out.println("Once");
+                    break;
+                case 12:
+                    System.out.println("Doce");
+                    break;
+                case 13:
+                    System.out.println("Trece");
+                    break;
+                case 14:
+                    System.out.println("Catorce");
+                    break;
+                case 15:
+                    System.out.println("Quince");
+                    break;
+                case 16:
+                    System.out.println("Dieciseis");
+                    break;
+                case 17:
+                    System.out.println("Diecisiete");
+                    break;
+                case 18:
+                    System.out.println("Dieciocho");
+                    break;
+                case 19:
+                    System.out.println("Diecinueve");
+                    break;
+            }
+            System.exit(0);
+        }
+        switch (decenas){
+            case 1:
+                System.out.print("Diez");
+                break;
+            case 2:
+                System.out.print("Veinte");
+                break;
+            case 3:
+                System.out.print("Treinta");
+                break;
+            case 4:
+                System.out.print("Cuarenta");
+                break;
+            case 5:
+                System.out.print("Cincuenta");
+                break;
+            case 6:
+                System.out.println("Sesenta");
+                break;
+            case 7:
+                System.out.print("Setenta");
+                break;
+            case 8:
+                System.out.print("Ochenta");
+                break;
+            case 9:
+                System.out.print("Noventa");
+                break;
+        }
+        switch (unidades){
+            case 0:
+                System.out.print("");
+                break;
+            case 1:
+                System.out.print(" y uno");
+                break;
+            case 2:
+                System.out.print(" y dos");
+                break;
+            case 3:
+                System.out.print(" y tres");
+                break;
+            case 4:
+                System.out.print(" y cuatro");
+                break;
+            case 5:
+                System.out.print(" y cinco");
+                break;
+            case 6:
+                System.out.print(" y seis");
+                break;
+            case 7:
+                System.out.print(" y siete");
+                break;
+            case 8:
+                System.out.print(" y ocho");
+                break;
+            case 9:
+                System.out.print(" y nueve");
+                break;
+        }
     }
 
     public static double pedirDouble() {

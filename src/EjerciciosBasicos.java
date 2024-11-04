@@ -9,8 +9,9 @@ public class EjerciciosBasicos {
         ej3();
         ej4();
         ej5();
-        ej6();*/
-        ej7();
+        ej6();
+        ej7();*/
+        doWhile();
     }
 
     //Ejercicio 1. Escribe un programa en el que se declaren las variables enteras x e y. Asignales
@@ -77,7 +78,16 @@ public class EjerciciosBasicos {
         System.out.println("Ingrese el radio del circulo: ");
         double radioCirculo = sc.nextDouble();
         radioCirculo = Math.pow(radioCirculo, 2);
-        System.out.println("El area es: "+PI * radioCirculo);
+        System.out.println("El area es: " + PI * radioCirculo);
+    }
+
+    public static void doWhile() {
+        int numero = 2;
+        do {
+            System.out.println("Ingrese el numero: ");
+            numero = sc.nextInt();
+            System.out.println(numero);
+        } while (numero % 2 == 0);
     }
 
     //Metodos que me ayudan a la hora de reutilizar el codigo
