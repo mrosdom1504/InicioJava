@@ -180,19 +180,30 @@ public class EjerciciosBasicos {
     public static void busquedaDelTesoro(){
         Random random = new Random();
         boolean siNoSePisaMina = true;
-        int [][] numeros = new int[4][5];
+        int[][] numeros = new int[4][5];
+        int[][] tesoros = new int[4][5];
         System.out.println("¿Cuantas casillas de tesoro desea?: ");
         int casillas = sc.nextInt();
         while(0<casillas){
             casillas--;
             numeros[random.nextInt(0,4)][random.nextInt(0,5)] = 1;
+            tesoros = numeros;
         }
         System.out.println("¿Cuantas casillas de minas desea?:");
         int minas = sc.nextInt();
-        while(0<minas){
-            minas--;
-            numeros[random.nextInt(0,4)][random.nextInt(0,5)] = 2;
+        for(int i =0;i<minas;i++){
+            int j = random.nextInt(0,4)+1;
+            int aux = j;
+            int k = random.nextInt(0,5)+1;
+            int aux2 = k;
+            for(;j>aux-1;aux++){
+                for(;k>aux2-1;aux2++){
+                    if(tesoros[j-1][k-1] != 1)
+                        numeros[j-1][k-1] = 2;
+                }
+            }
         }
+
         while(siNoSePisaMina) {
             System.out.println("En que fila esta el tesoro?");
             int fila = sc.nextInt();
@@ -208,8 +219,10 @@ public class EjerciciosBasicos {
                         System.out.println("Pisaste una mina");
                         siNoSePisaMina = false;
                         break;
-                    }else
+                    }else {
                         System.out.println("No hay nada");
+                        break;
+                    }
                 }
             }
         }
