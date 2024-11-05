@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class EjerciciosBasicos {
@@ -10,8 +12,14 @@ public class EjerciciosBasicos {
         ej4();
         ej5();
         ej6();
-        ej7();*/
+        ej7();
         doWhile();
+        numRandom();
+        rockPaperScissors();
+        arrays();
+        banderaRandom();
+        arraysBidimensionales();*/
+        busquedaDelTesoro();
     }
 
     //Ejercicio 1. Escribe un programa en el que se declaren las variables enteras x e y. Asignales
@@ -88,6 +96,102 @@ public class EjerciciosBasicos {
             numero = sc.nextInt();
             System.out.println(numero);
         } while (numero % 2 == 0);
+    }
+
+    public static void numRandom() {
+        for (int i = 0; i <= 20; i++) {
+            System.out.println((int) ((Math.random() * 10)+50));
+        }
+    }
+    public static void rockPaperScissors() {
+        Random random = new Random();
+        switch (random.nextInt(3)) {
+            case 0:
+                System.out.println("ROCK");
+                break;
+            case 1:
+                System.out.println("PAPER");
+                break;
+            case 2:
+                System.out.println("SCISSORS");
+                break;
+        }
+    }
+    public static void arrays(){
+        int[] numero = new int[3];
+        numero[0] = 1;
+        numero[1] = 2;
+        numero[2] = 3;
+        System.out.println(Arrays.toString(numero));
+    }
+    public static void banderaRandom(){
+        Random random = new Random();
+        String[] colores = {"rojo","verde","azul","amarillo","morado","rosa"};
+        System.out.println("¿De cuantos colores quiere la bandera?");
+        int condicion = sc.nextInt();
+        while(0<condicion){
+            condicion--;
+            switch (random.nextInt(6)){
+                case 0:
+                    System.out.println("-----------");
+                    System.out.println("rojo");
+                    break;
+                case 1:
+                    System.out.println("-----------");
+                    System.out.println("verde");
+                    break;
+                case 2:
+                    System.out.println("-----------");
+                    System.out.println("azul");
+                    break;
+                case 3:
+                    System.out.println("-----------");
+                    System.out.println("amarillo");
+                    break;
+                case 4:
+                    System.out.println("-----------");
+                    System.out.println("morado");
+                    break;
+                case 5:
+                    System.out.println("-----------");
+                    System.out.println("rosa");
+                    break;
+            }
+        }
+        System.out.println("-----------");
+    }
+    public static void arraysBidimensionales(){
+        int[][] numeros = new int[3][2];
+        numeros[0][0] = 1;
+        numeros[0][1] = 2;
+        numeros[1][0] = 3;
+        numeros[1][1] = 4;
+        numeros[2][0] = 5;
+        numeros[2][1] = 6;
+        for(int[] numero : numeros){
+            for(int num : numero){
+                System.out.println(num);
+            }
+            System.out.println(Arrays.toString(numero));
+        }
+    }
+    //Se colocan una mina y un tesoro de forma aleatoria en un cuadrante de 4 filas por 5 columnas.
+    //El usuario intentará averiguar donde está el tesoro.
+    public static void busquedaDelTesoro(){
+        Random random = new Random();
+        int [][] numeros = new int[4][5];
+        numeros[0][0] = 1;
+        System.out.println("En que fila esta el tesoro?");
+        int fila = sc.nextInt();
+        System.out.println("En que columna esta el tesoro?");
+        int columna = sc.nextInt();
+        for(int i=0; i<fila; i++){
+            for(int j=0; j<columna; j++){
+                if(numeros[fila-1][columna-1]==1){
+                    System.out.println("Encontraste el tesoro");
+                }
+            }
+        }
     }
 
     //Metodos que me ayudan a la hora de reutilizar el codigo
