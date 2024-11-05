@@ -179,16 +179,37 @@ public class EjerciciosBasicos {
     //El usuario intentará averiguar donde está el tesoro.
     public static void busquedaDelTesoro(){
         Random random = new Random();
+        boolean siNoSePisaMina = true;
         int [][] numeros = new int[4][5];
-        numeros[0][0] = 1;
-        System.out.println("En que fila esta el tesoro?");
-        int fila = sc.nextInt();
-        System.out.println("En que columna esta el tesoro?");
-        int columna = sc.nextInt();
-        for(int i=0; i<fila; i++){
-            for(int j=0; j<columna; j++){
-                if(numeros[fila-1][columna-1]==1){
-                    System.out.println("Encontraste el tesoro");
+        System.out.println("¿Cuantas casillas de tesoro desea?: ");
+        int casillas = sc.nextInt();
+        while(0<casillas){
+            casillas--;
+            numeros[random.nextInt(0,4)][random.nextInt(0,5)] = 1;
+        }
+        System.out.println("¿Cuantas casillas de minas desea?:");
+        int minas = sc.nextInt();
+        while(0<minas){
+            minas--;
+            numeros[random.nextInt(0,4)][random.nextInt(0,5)] = 2;
+        }
+        while(siNoSePisaMina) {
+            System.out.println("En que fila esta el tesoro?");
+            int fila = sc.nextInt();
+            System.out.println("En que columna esta el tesoro?");
+            int columna = sc.nextInt();
+            for (int i = 0; i < fila; i++) {
+                for (int j = 0; j < columna; j++) {
+                    if (numeros[fila - 1][columna - 1] == 1) {
+                        System.out.println("Encontraste el tesoro");
+                        siNoSePisaMina = false;
+                        break;
+                    }else if (numeros[fila - 1][columna - 1] == 2) {
+                        System.out.println("Pisaste una mina");
+                        siNoSePisaMina = false;
+                        break;
+                    }else
+                        System.out.println("No hay nada");
                 }
             }
         }
