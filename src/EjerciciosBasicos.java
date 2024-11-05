@@ -191,7 +191,8 @@ public class EjerciciosBasicos {
         }
         System.out.println("¿Cuantas casillas de minas desea?:");
         int minas = sc.nextInt();
-        for(int i =0;i<minas;i++){
+        while(0<minas){
+            minas--;
             int j = random.nextInt(0,4)+1;
             int aux = j;
             int k = random.nextInt(0,5)+1;
