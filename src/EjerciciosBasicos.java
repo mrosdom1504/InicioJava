@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -18,8 +19,9 @@ public class EjerciciosBasicos {
         rockPaperScissors();
         arrays();
         banderaRandom();
-        arraysBidimensionales();*/
-        busquedaDelTesoro();
+        arraysBidimensionales();
+        busquedaDelTesoro();*/
+        forEach();
     }
 
     //Ejercicio 1. Escribe un programa en el que se declaren las variables enteras x e y. Asignales
@@ -80,7 +82,7 @@ public class EjerciciosBasicos {
         double importeFinal = (baseImponible - restaIrpf);
         System.out.println(importeFinal);
     }
-
+    //Calcular radio de un circulo con clases
     public static void ej7() {
         final double PI = 3.1416;
         System.out.println("Ingrese el radio del circulo: ");
@@ -88,7 +90,7 @@ public class EjerciciosBasicos {
         radioCirculo = Math.pow(radioCirculo, 2);
         System.out.println("El area es: " + PI * radioCirculo);
     }
-
+    //Usar do while para ingresar un numero mientras sea par
     public static void doWhile() {
         int numero = 2;
         do {
@@ -97,12 +99,13 @@ public class EjerciciosBasicos {
             System.out.println(numero);
         } while (numero % 2 == 0);
     }
-
+    //Generador de numeros aleatorios entre 50 y 60
     public static void numRandom() {
         for (int i = 0; i <= 20; i++) {
             System.out.println((int) ((Math.random() * 10)+50));
         }
     }
+    //Piedra, papel, tijeras aleatorio con clase random
     public static void rockPaperScissors() {
         Random random = new Random();
         switch (random.nextInt(3)) {
@@ -117,6 +120,7 @@ public class EjerciciosBasicos {
                 break;
         }
     }
+    //Crear un array de longitud 3 e imprimirlo por pantalla
     public static void arrays(){
         int[] numero = new int[3];
         numero[0] = 1;
@@ -124,6 +128,7 @@ public class EjerciciosBasicos {
         numero[2] = 3;
         System.out.println(Arrays.toString(numero));
     }
+    //Crear una bandera de N franjas de colores aleatorios
     public static void banderaRandom(){
         Random random = new Random();
         String[] colores = {"rojo","verde","azul","amarillo","morado","rosa"};
@@ -160,6 +165,7 @@ public class EjerciciosBasicos {
         }
         System.out.println("-----------");
     }
+    //Crear array de dos dimensiones e imprimirlo
     public static void arraysBidimensionales(){
         int[][] numeros = new int[3][2];
         numeros[0][0] = 1;
@@ -200,7 +206,7 @@ public class EjerciciosBasicos {
             for(;j>aux-1;aux++){
                 for(;k>aux2-1;aux2++){
                     if(tesoros[j-1][k-1] != 1)
-                        numeros[j-1][k-1] = 2;
+                        numeros[j - 1][k - 1] = 2;
                 }
             }
         }
@@ -227,6 +233,13 @@ public class EjerciciosBasicos {
                 }
             }
         }
+    }
+    public static void forEach(){
+        String[] nombre = {"Pepe","sad","asd"};
+        for (int i = 0; i < nombre.length; i++) {
+            nombre[i] = JOptionPane.showInputDialog("Ingrese el nombre: ");
+        }
+        System.out.println(Arrays.toString(nombre));
     }
 
     //Metodos que me ayudan a la hora de reutilizar el codigo
