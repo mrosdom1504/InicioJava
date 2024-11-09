@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Arrays {
+public class ArraysEjercicios {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         //explicacion();
