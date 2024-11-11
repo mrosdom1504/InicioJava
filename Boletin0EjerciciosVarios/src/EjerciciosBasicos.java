@@ -19,9 +19,9 @@ public class EjerciciosBasicos {
         rockPaperScissors();
         arrays();
         banderaRandom();
-        arraysBidimensionales();
-        busquedaDelTesoro();*/
-        forEach();
+        arraysBidimensionales();*/
+        busquedaDelTesoro();
+        //forEach();
     }
 
     //Ejercicio 1. Escribe un programa en el que se declaren las variables enteras x e y. Asignales
@@ -210,7 +210,14 @@ public class EjerciciosBasicos {
                 }
             }
         }
-
+        for(int i = 0;i<numeros.length;i++){
+            System.out.println();
+            for(int j = 0;j<numeros[i].length;j++){
+                System.out.print(numeros[i][j]);
+            }
+        }
+        System.out.println();
+        System.out.println();
         while(siNoSePisaMina) {
             System.out.println("En que fila esta el tesoro?");
             int fila = sc.nextInt();
@@ -232,6 +239,14 @@ public class EjerciciosBasicos {
                     }
                 }
             }
+            for(int i = 0;i<numeros.length;i++){
+                System.out.println();
+                for(int j = 0;j<numeros[i].length;j++){
+                    System.out.print(numeros[i][j]);
+                }
+            }
+            System.out.println();
+            System.out.println();
         }
     }
     public static void forEach(){
