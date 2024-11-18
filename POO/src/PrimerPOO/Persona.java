@@ -1,3 +1,5 @@
+package PrimerPOO;
+
 import java.util.Objects;
 
 public class Persona {
@@ -47,7 +49,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" +
+        return "PrimerPOO.Persona{" +
                 "nombre='" + nombre + '\'' +
                 ", edad=" + edad +
                 ", sexo=" + sexo +
