@@ -8,7 +8,6 @@ public class Main {
             System.out.println("Primo");
         else
             System.out.println("No es primo");
-        func.
     }
     public static void menu(FuncionesMatematicas func) {
     }
