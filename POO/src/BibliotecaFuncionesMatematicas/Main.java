@@ -4,11 +4,8 @@ package BibliotecaFuncionesMatematicas;
 public class Main {
     public static void main(String[] args) {
         FuncionesMatematicas func = new FuncionesMatematicas();
-        if(func.esPrimo(7))
-            System.out.println("Primo");
-        else
-            System.out.println("No es primo");
-    }
-    public static void menu(FuncionesMatematicas func) {
+        func.esPrimo(8);
+        func.esCapicua(1111);
+        func.voltea(1234);
     }
 }

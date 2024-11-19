@@ -20,12 +20,32 @@ public class FuncionesMatematicas {
         }
     }
 
-    public boolean esPrimo(int n) {
+    public void esPrimo(int n) {
         for (int i = 2; i < n; i++) {
             if (n % i == 0) {
-                return false;
+                System.out.println("No es primo");
+                return;
             }
         }
-        return true;
+        System.out.println("Es primo");
+    }
+    public int digitos(int n) {
+        if(n<0){
+            n=-n;
+        }
+        if(n==0){
+            return 1;
+        }else{
+            n = n/10;
+            n++;
+        }
+        return n;
+    }
+    public void voltea(int n) {
+        String numero = String.valueOf(n);
+        StringBuilder volteado = new StringBuilder(numero).reverse();
+        System.out.println(volteado);
     }
 }
+
+//
