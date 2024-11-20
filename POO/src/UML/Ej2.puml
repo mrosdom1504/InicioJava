@@ -1,0 +1,39 @@
+@startuml
+class Biblioteca{
+-libros: String[]
+-usuarios: String[]
+--
++getLibros(): String[]
++setLibros(libros: String[]): void
++getUsuarios(): String[]
++setUsuarios(usuarios: String[]): void
++prestarLibro(Usuario, Libro): void
+}
+
+class Libro{
+-isbn: String
+-paginas: int
+-genero: String
+--
++Libro(isbn: String, paginas: int, genero: String)
++getIsbn(): String
++setIsbn(isbn: String): void
++getPaginas(): int
++setPaginas(paginas: int): void
++getGenero(): String
++setGenero(genero: String):void
+}
+
+class Usuario{
+-nombre: String
+-carne: String
+--
++Usuario(nombre: String, carne:String)
++getNombre(): String
++setNombre(nombre: String): void
++getCarne(): String
++setCarne(carne: String): void
+}
+Biblioteca-->Libro
+Biblioteca-->Usuario
+@enduml

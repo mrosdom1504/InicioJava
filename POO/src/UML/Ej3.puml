@@ -1,0 +1,14 @@
+@startuml
+class Tienda{
+
+}
+class Usuario{
+
+}
+class Producto{
+
+}
+
+Tienda -> Usuario
+Tienda -> Producto
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class Estudiante{
+-nombre: String
+-edad: int
+-matricula: String
+--
++Estudiante(nombre: String, edad: int, matricula: String)
++getNombre(): String
++setNombre(nombre: String): void
++getEdad(): int
++setEdad(edad: int): void
++getMatricula(): String
++setMatricula(matricula: String): void
+}
+
+@enduml
