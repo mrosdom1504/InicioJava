@@ -1,0 +1,20 @@
+@startuml
+abstract class Animal{
+-nombre: String
+-tipo: int
+-peso: String;
+--
++Animal(nombre:String, tipo: int, peso: String)
++getNombre(): String
++setNombre(nombre: String): void
++getTipo(): String
++setTipo(tipo:int): void
++getPeso(): String
++setPeso(peso: String): void
+}
+class Caballo{
+
+}
+
+Animal<--Caballo
+@enduml
