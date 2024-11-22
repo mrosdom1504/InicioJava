@@ -36,18 +36,23 @@ public class Cuadrado {
     public int hashCode() {
         return Objects.hashCode(lado);
     }
+
     public void imprimir() {
         for (int i = 0; i < lado; i++) {
             System.out.print("*");
         }
         System.out.println();
-        for (int j = lado; j < lado; j++) {
-            if(j==lado)
-                System.out.print("*");
-            else if(j==lado-1)
-                System.out.print("*");
-            else
-                System.out.print(" ");
+        for (int j = 2; j < lado; j++) {
+            if (j != 2)
+                System.out.println();
+            for (int l = 0; l < lado; l++) {
+                if (l == 0)
+                    System.out.print("*");
+                else if (l == lado - 1)
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
+            }
         }
         System.out.println();
         for (int k = 0; k < lado; k++) {
