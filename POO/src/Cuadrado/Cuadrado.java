@@ -1,5 +1,6 @@
 package Cuadrado;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Cuadrado {
@@ -19,9 +20,7 @@ public class Cuadrado {
 
     @Override
     public String toString() {
-        return "Cuadrado{" +
-                "lado=" + lado +
-                '}';
+        return "Cuadrado{" + "lado=" + lado + '}';
     }
 
     @Override
@@ -39,25 +38,49 @@ public class Cuadrado {
 
     public void imprimir() {
         for (int i = 0; i < lado; i++) {
-            System.out.print("*");
+            System.out.print("*  ");
         }
-        System.out.println();
-        for (int j = 2; j < lado; j++) {
-            if (j != 2)
+        if (lado != 1) {
+            if (lado != 2)
                 System.out.println();
-            for (int l = 0; l < lado; l++) {
-                if (l == 0)
-                    System.out.print("*");
-                else if (l == lado - 1)
-                    System.out.print("*");
-                else
-                    System.out.print(" ");
+            for (int i = 2; i < lado; i++) {
+                if (i != 2)
+                    System.out.println();
+                for (int j = 0; j < lado; j++) {
+                    if (j == 0)
+                        System.out.print("* ");
+                    else if (j == lado - 1)
+                        System.out.print(" *");
+                    else
+                        System.out.print("   ");
+                }
+            }
+            System.out.println();
+            for (int k = 0; k < lado; k++) {
+                System.out.print("*  ");
             }
         }
-        System.out.println();
-        for (int k = 0; k < lado; k++) {
-            System.out.print("*");
+    }
+    public void imprimirArray(){
+        String[][] array = new String[lado][lado];
+        for (int i = 0; i < lado; i++) {
+            for (int j = 0; j < lado; j++) {
+                if (j == 0)
+                    array[i][j] = "* ";
+                else if (j == lado - 1)
+                    array[i][j] = "* ";
+                else if (i==0 || i==lado-1)
+                    array[i][j] = "* ";
+                else
+                    array[i][j] = "  ";
+            }
+            System.out.println();
         }
-        System.out.println();
+        for (int i = 0; i < lado; i++) {
+            for (int j = 0; j < lado; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
