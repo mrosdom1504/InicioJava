@@ -1,5 +1,6 @@
 package Estudiante;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -61,19 +62,30 @@ public class Estudiante {
         return Objects.hash(nombre, edad, matricula);
     }
 
-    public Estudiante registrarEstudiante(){
+    public Estudiante registrarEstudiante() {
         System.out.println("Ingresa un nombre del estudiante");
-        nombre= sc.nextLine();
+        nombre = sc.nextLine();
         System.out.println("Ingresa un edad del estudiante");
-        edad= sc.nextInt();
+        edad = sc.nextInt();
         sc.nextLine();
         System.out.println("Ingresa un matricula del estudiante");
-        matricula= sc.nextLine();
+        matricula = sc.nextLine();
         return new Estudiante(nombre, edad, matricula);
     }
-    public void mostrarInformacion(){
+
+    public void mostrarInformacion() {
         System.out.println("Nombre: " + nombre);
         System.out.println("Edad: " + edad);
         System.out.println("Matricula: " + matricula);
+    }
+
+    public static void buscarMatricula(ArrayList<Estudiante> estudiantes) {
+        System.out.println("Ingresa la matricula que desea buscar");
+        String matricula = sc.nextLine();
+        for (Estudiante estudiante : estudiantes) {
+            if (estudiante.getMatricula().equals(matricula)) {
+                System.out.println(estudiante);
+            }
+        }
     }
 }

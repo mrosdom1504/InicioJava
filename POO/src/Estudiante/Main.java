@@ -11,15 +11,6 @@ public class Main {
         estudiantes.add(estudiante.registrarEstudiante());
         System.out.println(estudiantes);
         estudiante.mostrarInformacion();
-        buscarMatricula(estudiantes);
-    }
-    public static void buscarMatricula(ArrayList<Estudiante> estudiantes) {
-        System.out.println("Ingresa la matricula que desea buscar");
-        String matricula = sc.nextLine();
-        for(Estudiante estudiante : estudiantes) {
-            if(estudiante.getMatricula().equals(matricula)) {
-                System.out.println(estudiante);
-            }
-        }
+        Estudiante.buscarMatricula(estudiantes);
     }
 }
