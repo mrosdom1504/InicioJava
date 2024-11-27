@@ -60,6 +60,7 @@ public class Estudiante {
     public int hashCode() {
         return Objects.hash(nombre, edad, matricula);
     }
+
     public Estudiante registrarEstudiante(){
         System.out.println("Ingresa un nombre del estudiante");
         nombre= sc.nextLine();

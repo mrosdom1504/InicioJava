@@ -5,6 +5,6 @@ public class Coche extends Vehiculo {
         super(velocidad);
     }
     public void mover() {
-        System.out.println("El coche se mueve por la carretera a "+ velocidad +" km/h");
+        System.out.println("El coche se mueve por la carretera a "+ getVelocidad() +" km/h");
     }
 }
