@@ -1,6 +1,4 @@
 package Cuadrado;
-
-import java.util.Arrays;
 import java.util.Objects;
 
 public class Cuadrado {

@@ -12,5 +12,4 @@ class Estudiante{
 +getMatricula(): String
 +setMatricula(matricula: String): void
 }
-
 @enduml
