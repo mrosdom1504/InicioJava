@@ -1,4 +1,4 @@
-package Tiempo;
+package POO1_Ej6;
 
 import java.util.Objects;
 
@@ -40,7 +40,7 @@ public class Tiempo {
 
     @Override
     public String toString() {
-        return  hora +"h "+ minuto+"m "+segundo+"s";
+        return hora + "h " + minuto + "m " + segundo + "s";
     }
 
     @Override
@@ -55,6 +55,7 @@ public class Tiempo {
     public int hashCode() {
         return Objects.hash(hora, minuto, segundo);
     }
+
     private void normalizarTiempo() {
         this.minuto += this.segundo / 60;
         this.segundo = this.segundo % 60;
@@ -62,16 +63,18 @@ public class Tiempo {
         this.hora += this.minuto / 60;
         this.minuto = this.minuto % 60;
     }
-    public Tiempo sumar(Tiempo tiempo,Tiempo tiempo2) {
+
+    public Tiempo sumar(Tiempo tiempo, Tiempo tiempo2) {
         segundo = tiempo.segundo + tiempo2.segundo;
         minuto = tiempo.minuto + tiempo2.minuto;
         hora = tiempo.hora + tiempo2.hora;
-        return new Tiempo(hora,minuto,segundo);
+        return new Tiempo(hora, minuto, segundo);
     }
-    public Tiempo restar(Tiempo tiempo,Tiempo tiempo2) {
+
+    public Tiempo restar(Tiempo tiempo, Tiempo tiempo2) {
         segundo = tiempo.segundo - tiempo2.segundo;
         minuto = tiempo.minuto - tiempo2.minuto;
         hora = tiempo.hora - tiempo2.hora;
-        return new Tiempo(hora,minuto,segundo);
+        return new Tiempo(hora, minuto, segundo);
     }
 }
