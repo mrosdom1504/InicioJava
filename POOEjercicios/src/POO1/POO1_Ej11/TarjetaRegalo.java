@@ -1,19 +1,23 @@
 package POO1.POO1_Ej11;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Random;
+
 public class TarjetaRegalo {
     private double saldo;
-    private static int numTarjeta = 0;
+    private String tarjeta;
     public TarjetaRegalo(double saldo) {
-        numTarjeta++;
         this.saldo = saldo;
+        this.tarjeta= crearTarjeta();
     }
 
-    public static int getNumTarjeta() {
-        return numTarjeta;
+    public String getTarjeta() {
+        return tarjeta;
     }
 
-    public static void setNumTarjeta(int numTarjeta) {
-        TarjetaRegalo.numTarjeta = numTarjeta;
+    public void setTarjeta(String tarjeta) {
+        this.tarjeta = tarjeta;
     }
 
     public double getSaldo() {
@@ -26,9 +30,23 @@ public class TarjetaRegalo {
 
     @Override
     public String toString() {
-        return "TarjetaRegalo{" +
-                "saldo=" + saldo +
-                '}';
+        return "Nº"+tarjeta +
+                " saldo=" + saldo;
+    }
+    public String crearTarjeta() {
+        StringBuilder tarjeta = new StringBuilder();
+        ArrayList<StringBuilder> tarjetas = new ArrayList<>();
+        Random r = new Random();
+        int num;
+        for (int i = 0; i < 5; i++) {
+            num = r.nextInt(0,9);
+            tarjeta.append(num);
+        }
+        if(tarjetas.contains(tarjeta)){
+            crearTarjeta();
+        }
+        tarjetas.add(tarjeta);
+        return tarjeta.toString();
     }
     public void gasta(double dinero){
         if(dinero > this.saldo){

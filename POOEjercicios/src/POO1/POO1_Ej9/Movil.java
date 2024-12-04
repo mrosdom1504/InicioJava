@@ -3,11 +3,10 @@ package POO1.POO1_Ej9;
 import POO1.POO1_Ej8.Terminal;
 
 public class Movil extends Terminal{
-    private String numero;
     private String tarifa;
     private double dinero = 0;
     public Movil(String numero,String tarifa){
-        this.numero=numero;
+        super(numero);
         this.tarifa = tarifa;
     }
 
@@ -39,9 +38,10 @@ public class Movil extends Terminal{
     public String toString() {
         return "Nº" + numero + " Tiempo: " + tiempo + " -tarificados "+dinero+" euros";
     }
+
     public void llama(Movil telefono, int tiempo) {
         this.tiempo += tiempo;
-        this.dinero = ((tiempo/60)*0.12);
+        this.dinero = (((double) tiempo /60)*0.12);
         telefono.setTiempo(tiempo);
     }
 }
