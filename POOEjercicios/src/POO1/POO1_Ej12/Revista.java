@@ -2,15 +2,13 @@ package POO1.POO1_Ej12;
 
 import java.util.Objects;
 
-public class Revista extends Libro{
+public class Revista extends Publicacion{
     /*ISBN, el título, y el año de publicación*/
-    private int anioPublicacion2;
-    private static int numeroRevista=0;
+    private int numeroRevista=0;
 
-    public Revista(String titulo, String isbn, int anioPublicacion, int anioPublicacion2) {
-        super(titulo, isbn, anioPublicacion);
-        this.anioPublicacion2 = anioPublicacion2;
-        numeroRevista++;
+    public Revista(String titulo, String isbn, int anio, int numeroRevista) {
+        super(titulo, isbn, anio);
+        this.numeroRevista = numeroRevista;
     }
 
     public String getTitulo() {
@@ -30,47 +28,41 @@ public class Revista extends Libro{
     }
 
     public int getAnioPublicacion() {
-        return anioPublicacion;
+        return anio;
     }
 
     public void setAnioPublicacion(int anioPublicacion) {
-        this.anioPublicacion = anioPublicacion;
-    }
-    public int getAnioPublicacion2() {
-        return anioPublicacion2;
-    }
-    public void setAnioPublicacion2(int anioPublicacion2) {
-        this.anioPublicacion2 = anioPublicacion2;
+        this.anio = anioPublicacion;
     }
 
-    public static int getNumeroRevista() {
+
+    public int getNumeroRevista() {
         return numeroRevista;
     }
 
-    public static void setNumeroRevista(int numeroRevista) {
-        Revista.numeroRevista = numeroRevista;
+    public void setNumeroRevista(int numeroRevista) {
+        this.numeroRevista = numeroRevista;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Revista revista = (Revista) o;
-        return anioPublicacion == revista.anioPublicacion && anioPublicacion2 == revista.anioPublicacion2 && Objects.equals(titulo, revista.titulo) && Objects.equals(isbn, revista.isbn);
+        return numeroRevista == revista.numeroRevista;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(titulo, isbn, anioPublicacion, anioPublicacion2);
+        return Objects.hash(super.hashCode(), numeroRevista);
     }
 
     @Override
     public String toString() {
         return "Revista{" +
-                "titulo='" + titulo + '\'' +
-                ", isbn='" + isbn + '\'' +
-                ", anioPublicacion=" + anioPublicacion +
-                ", anioPublicacion2=" + anioPublicacion2 +
-                '}';
+                "numeroRevista=" + numeroRevista +
+                ", titulo='" + titulo + '\'' +
+                ", isbn='" + isbn + "}";
     }
 }

@@ -2,17 +2,12 @@ package POO1.POO1_Ej12;
 
 import java.util.Objects;
 
-public class Libro implements Prestable {
+public class Libro extends Publicacion implements Prestable {
     /*ISBN, el título, y el año de publicación*/
-    protected String titulo;
-    protected String isbn;
-    protected int anioPublicacion;
     private boolean esPrestado = false;
 
-    public Libro(String titulo, String isbn, int anioPublicacion) {
-        this.titulo = titulo;
-        this.isbn = isbn;
-        this.anioPublicacion = anioPublicacion;
+    public Libro(String titulo, String isbn, int anio) {
+        super(titulo,isbn,anio);
     }
 
     public String getTitulo() {
@@ -32,11 +27,11 @@ public class Libro implements Prestable {
     }
 
     public int getAnioPublicacion() {
-        return anioPublicacion;
+        return anio;
     }
 
-    public void setAnioPublicacion(int anioPublicacion) {
-        this.anioPublicacion = anioPublicacion;
+    public void setAnioPublicacion(int anio) {
+        this.anio = anio;
     }
 
     public boolean isEsPrestado() {
@@ -52,27 +47,35 @@ public class Libro implements Prestable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Libro libro = (Libro) o;
-        return anioPublicacion == libro.anioPublicacion && esPrestado == libro.esPrestado && Objects.equals(titulo, libro.titulo) && Objects.equals(isbn, libro.isbn);
+        return esPrestado == libro.esPrestado;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(titulo, isbn, anioPublicacion, esPrestado);
+        return Objects.hashCode(esPrestado);
     }
 
     @Override
     public String toString() {
         return "Libro{" +
-                "titulo='" + titulo + '\'' +
+                "esPrestado=" + esPrestado +
                 ", isbn='" + isbn + '\'' +
-                ", anioPublicacion=" + anioPublicacion +
-                ", esPrestado=" + esPrestado +
+                ", titulo='" + titulo + '\'' +
+                ", anio=" + anio +
                 '}';
     }
 
     public void presta() {
+        if(!esPrestado)
+            this.esPrestado = true;
+        else
+            System.out.println("Lo siento, ese libro ya está prestado.");
     }
     public void devuelve(){
+        if(esPrestado)
+            this.esPrestado = false;
+        else
+            System.out.println("No está prestado");
     }
     public boolean estaPrestado(){
         return esPrestado;
