@@ -2,7 +2,7 @@ package POO1.POO1_Ej12;
 
 import java.util.Objects;
 
-public class Libro extends Prestable {
+public class Libro implements Prestable {
     /*ISBN, el título, y el año de publicación*/
     protected String titulo;
     protected String isbn;
