@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Revista extends Publicacion{
     /*ISBN, el título, y el año de publicación*/
-    private int numeroRevista=0;
+    private int numeroRevista;
 
     public Revista(String titulo, String isbn, int anio, int numeroRevista) {
         super(titulo, isbn, anio);
