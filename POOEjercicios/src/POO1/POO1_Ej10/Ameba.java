@@ -20,10 +20,10 @@ public class Ameba {
     }
 
     public void come(int peso){
-        this.peso += (peso-1);
+        this.peso += peso-1;
     }
     public void come(Ameba a){
-        this.peso += (a.getPeso()-1);
+        this.peso += a.getPeso()-1;
         a.setPeso(0);
     }
 }
