@@ -3,11 +3,10 @@ package POOAprendizaje.Parte1;
 public class Superheroe {
     private String nombre;
     private String descripcion;
-    private boolean capa;
+    private boolean capa = false;
 
     Superheroe(String nombre) {
         this.nombre = nombre;
-        this.capa = false;
     }
 
     public String getNombre() {

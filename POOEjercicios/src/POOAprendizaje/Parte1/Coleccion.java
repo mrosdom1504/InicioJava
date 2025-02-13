@@ -48,13 +48,19 @@ public class Coleccion {
         }
     }
 
-    public void masValioso() {
-        double suma = 0;
+    public Figura masValioso() {
+        double precio = 0;
         for (Figura f : listaFiguras) {
-            if (f.getPrecio() > suma) {
-                suma = f.getPrecio();
+            if (f.getPrecio() > precio) {
+                precio = f.getPrecio();
             }
         }
+        for (Figura f : listaFiguras) {
+            if (f.getPrecio() == precio) {
+                return f;
+            }
+        }
+        return null;
     }
 
     public double getValorColeccion() {
