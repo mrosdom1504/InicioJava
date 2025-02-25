@@ -41,8 +41,8 @@ public class Diccionario {
     public void formulario() {
         String palabra;
         int nPreguntas = 0;
-        int aciertos = 0;
-        int fallos = 0;
+        double aciertos = 0;
+        double fallos = 0;
         for (String i : diccionario.keySet()) {
             nPreguntas++;
             System.out.println(diccionario.get(i) + ": " + i.charAt(0) + "...");
@@ -57,8 +57,8 @@ public class Diccionario {
             }
         }
         System.out.println("Preguntas: " + nPreguntas);
-        System.out.println("Correctas: " + aciertos);
-        System.out.println("Errores :" + fallos);
-        System.out.println("Aciertos: " + aciertos / fallos * 100 + "%");
+        System.out.println("Correctas: " + (int)aciertos);
+        System.out.println("Errores :" + (int)fallos);
+        System.out.println("Aciertos: " + ((aciertos / (aciertos + fallos)) * 100) + "%");
     }
 }

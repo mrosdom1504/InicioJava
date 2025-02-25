@@ -10,24 +10,24 @@ public class Inventario {
     }
 
     public static Producto buscarProducto(int codigo) {
-        for (int i = 0; i < productos.size(); i++) {
-            if (productos.get(i).getCodigo() == codigo) {
-                return productos.get(i);
+        for (Producto producto : productos) {
+            if (producto.getCodigo() == codigo) {
+                return producto;
             }
         }
         return null;
     }
 
     public static void mostrarInventario() {
-        for (int i = 0; i < productos.size(); i++) {
-            System.out.println(productos.get(i));
+        for (Producto producto : productos) {
+            System.out.println(producto);
         }
     }
 
     public static void venderProducto(int codigo, int cantidad) {
-        for (int i = 0; i < productos.size(); i++) {
-            if (productos.get(i).getCodigo() == codigo) {
-                productos.get(i).reducirStock(cantidad);
+        for (Producto producto : productos) {
+            if (producto.getCodigo() == codigo) {
+                producto.reducirStock(cantidad);
             }
         }
     }
