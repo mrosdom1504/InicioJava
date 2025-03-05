@@ -9,7 +9,7 @@ public class Main {
             {3, 6, 5},
             {4, 5, 4}
         };
-        Estudiante e = new Estudiante("Juan", calificaciones);
+        Estudiante e = new Estudiante("Juan",2,2);
         e.calcularPromedioMaterias();
         e.calcularPromedioGeneral();
         e.mostrarCalificaciones();
