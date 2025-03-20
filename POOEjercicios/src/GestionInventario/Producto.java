@@ -19,12 +19,10 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto{" +
-                "codigo=" + codigo +
-                ", nombre='" + nombre + '\'' +
-                ", precio=" + precio +
-                ", cantidad=" + cantidad +
-                '}';
+        return  "codigo=" + codigo + '\n' +
+                "nombre='" + nombre + '\n' +
+                "precio=" + precio + '\n' +
+                "cantidad=" + cantidad;
     }
 
     public void mostrarInformacion() {
@@ -34,17 +32,17 @@ public class Producto {
         System.out.println("Cantidad: " + cantidad);
     }
 
-    public void reducirStock(int numero) {
-        if(numero <= cantidad) {
-            this.cantidad -= numero;
+    public void reducirStock(int traslado) {
+        if(traslado <= cantidad) {
+            this.cantidad -= traslado;
         }else{
             System.out.println("No se pueden vender mas productos de los que hay");
         }
         System.out.println("Cantidad: " + cantidad);
     }
 
-    public void incrementarStock(int cantidad) {
-        cantidad += cantidad;
+    public void incrementarStock(int cantidadEntrante) {
+        cantidad += cantidadEntrante;
         System.out.println("Cantidad: " + cantidad);
     }
 }
