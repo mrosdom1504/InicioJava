@@ -100,7 +100,8 @@ public class EjerciciosFicheros {
     //nuevo archivo llamado `copia.txt`, manteniendo el mismo formato.
     public static void ejercicio6() {
         try{
-            BufferedReader br = new BufferedReader(new FileReader("datos.txt"));
+            FileReader archivo = new FileReader("datos.txt");
+            BufferedReader br = new BufferedReader(archivo);
             String linea;
             StringBuilder cadena = new StringBuilder();
             while ((linea = br.readLine()) != null) {
@@ -119,7 +120,8 @@ public class EjerciciosFicheros {
     //dentro del archivo `datos.txt` e indique cuántas veces aparece.
     public static void ejercicio7() {
         try{
-            BufferedReader br = new BufferedReader(new FileReader("datos.txt"));
+            FileReader archivo = new FileReader("datos.txt");
+            BufferedReader br = new BufferedReader(archivo);
             String linea;
             StringBuilder cadena = new StringBuilder();
             while ((linea = br.readLine()) != null) {
