@@ -5,7 +5,7 @@ public class EjerciciosFicheros {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        ejercicio7();
+        ejercicio11();
     }
 
     //Ejercicio 1: Crear y escribir en un archivo
@@ -99,29 +99,27 @@ public class EjerciciosFicheros {
     //Crea un programa que copie el contenido de `datos.txt` en un
     //nuevo archivo llamado `copia.txt`, manteniendo el mismo formato.
     public static void ejercicio6() {
-        try{
-            FileReader archivo = new FileReader("datos.txt");
-            BufferedReader br = new BufferedReader(archivo);
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("datos.txt"));
             String linea;
-            StringBuilder cadena = new StringBuilder();
+            BufferedWriter bw = new BufferedWriter(new FileWriter("datos2.txt", true));
             while ((linea = br.readLine()) != null) {
-                cadena.append(linea+"\n");
+                bw.write(linea);
+                bw.newLine();
             }
             br.close();
-            BufferedWriter bw = new BufferedWriter(new FileWriter("datos2.txt", true));
-            bw.write(cadena.toString().trim());
             bw.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     //Ejercicio 7: Buscar una palabra en un archivo
     //Escribe un programa que busque una palabra específica
     //dentro del archivo `datos.txt` e indique cuántas veces aparece.
     public static void ejercicio7() {
-        try{
-            FileReader archivo = new FileReader("datos.txt");
-            BufferedReader br = new BufferedReader(archivo);
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("datos.txt"));
             String linea;
             StringBuilder cadena = new StringBuilder();
             while ((linea = br.readLine()) != null) {
@@ -131,13 +129,56 @@ public class EjerciciosFicheros {
 
             String[] palabras = cadena.toString().trim().split("\\s+");
             int conteo = 0;
-            for (String palabra : palabras){
-                if (palabra.equals("Bienvenido")){
+            for (String palabra : palabras) {
+                if (palabra.equals("Bienvenido")) {
                     conteo++;
                 }
             }
             System.out.println(conteo);
-        }catch (IOException e){
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    //**Ejercicio 9: Renombrar un archivo**
+    // Desarrolla un programa que renombre el archivo `datos.txt` a `informacion.txt`,
+    // verificando que la operación se haya realizado con éxito.
+    public static void ejercicio9() {
+        try {
+            File archivo = new File("datos9.txt");
+            File archivoNuevo = new File("info9.txt");
+            if (archivo.renameTo(archivoNuevo))
+                System.out.println("El archivo se ha renombrado correctamente de: " + archivo.getName() + " a " + archivoNuevo.getName());
+            else
+                System.out.println("El archivo no se ha renombrado");
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //**Ejercicio 11: Listar archivos en un directorio**
+    // Crea un programa que muestre todos los archivos y carpetas dentro del directorio actual,
+    // indicando si cada uno es un archivo o un directorio.
+    public static void ejercicio11() {
+        File fichero = new File("C:\\Users\\usuario\\IdeaProjects\\InicioJava");
+        for (File file : fichero.listFiles()) {
+            if (file.isFile()) {
+                System.out.println(file.getName() + " es fichero.");
+            } else if (file.isDirectory()) {
+                System.out.println(file.getName() + " es directorio");
+            }
+        }
+    }
+    //**Ejercicio 12: Leer un archivo CSV y mostrar los datos**
+    // Crea un programa que lea un archivo CSV llamado `datos.csv` y muestre su contenido en formato tabla.
+    public static void ejercicio12() {
+        try{
+            BufferedReader br = new BufferedReader(new FileReader("datos.csv"));
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] palabras = linea.split(",");
+            }
+            br.close();
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
@@ -154,6 +195,10 @@ public class EjerciciosFicheros {
         System.out.println("Ejercicio 6:");
         System.out.println("Ejercicio 7:");
         System.out.println("Ejercicio 8:");
+        System.out.println("Ejercicio 9:");
+        System.out.println("Ejercicio 10:");
+        System.out.println("Ejercicio 11:");
+        System.out.println("Ejercicio 12:");
 
         switch (opcion) {
             case 1:
@@ -175,6 +220,8 @@ public class EjerciciosFicheros {
                 ejercicio6();
                 break;
             case 7:
+                ejercicio7();
+                break;
         }
     }
 }

@@ -4,22 +4,19 @@ import java.io.*;
 public class LectorArchivo {
     public static void main(String[] args) {
         if (args.length > 0) {
-            try{
-                for(String arg : args) {
+            try {
+                for (String arg : args) {
                     BufferedReader br = new BufferedReader(new FileReader(arg));
                     String linea;
                     while ((linea = br.readLine()) != null) {
                         System.out.println(linea);
                     }
-                br.close();
+                    br.close();
                 }
-            }
-            catch(IOException e){
+            } catch (IOException e) {
                 System.out.println(e);
             }
-
-        }
-        else {
+        } else {
             System.out.println("No hay argumentos");
         }
         soutToPrintWriter();
@@ -36,6 +33,7 @@ public class LectorArchivo {
             e.printStackTrace();
         }
     }
+
     public static void soutToPrintWriter() {
         PrintWriter pw = new PrintWriter(System.out);
         pw.print("Hello World");
