@@ -1,0 +1,30 @@
+@startuml
+class Universidad {
+    -nombre: String
+    -ubicacion: String
+}
+
+class Facultad {
+    -nombre: String
+    -ubicacion: String
+}
+class Profesor{
+    -nombre: String
+    -asignatura: String
+}
+class Estudiante{
+    -nombre: String
+    -edad: int
+}
+class Curso{
+    -nombre: String
+    -alistados: int
+}
+' Relación de agregación (◇)
+Universidad "1 " o-- "0,m " Facultad : contiene
+Facultad "1 " o-- "0,m " Profesor : contiene
+Profesor "1  " -- "0,m   " Curso : imparte
+Estudiante "0,m     " -- "0,m" Curso: está
+Profesor <|-- Persona
+Estudiante <|-- Persona
+@enduml

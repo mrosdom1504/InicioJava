@@ -1,0 +1,26 @@
+@startuml
+class Medico {
+    -id: int
+    -nombre: String
+    -especialidad: String
+}
+
+class Paciente {
+    -id: int
+    -nombre: String
+    -edad: int
+}
+
+class Hospital {
+    -id: int
+    -nombre: String
+    -direccion: String
+}
+
+' Relaciones
+Medico "1" --> "0,m" Paciente : atiende
+Paciente "1" --> "1" Medico : es atendido por
+
+Hospital "1" --> "0,m" Medico : tiene
+Medico "1" --> "1" Hospital : pertenece a
+@enduml

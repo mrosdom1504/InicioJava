@@ -1,0 +1,26 @@
+@startuml
+class Vehiculo {
+    -marca: String
+    -modelo: String
+    --
+    +velocidad_maxima(): int
+    +arrancar(): void
+}
+
+class Automovil {
+    -marca: String
+    -modelo: String
+    --
+    +abrir_maletero(): void
+}
+
+class Motocicleta {
+    -marca: String
+    -modelo: String
+    --
+    +hacer_caballito(): void
+}
+Automovil --> Vehiculo
+Motocicleta --> Vehiculo
+
+@enduml

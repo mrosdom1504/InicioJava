@@ -5,7 +5,7 @@ public class EjerciciosFicheros {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        ejercicio11();
+        ejercicio13("C:\\Users\\usuario\\IdeaProjects\\InicioJava\\img.png", "C:\\Users\\usuario\\IdeaProjects\\InicioJava\\imgNueva.png");
     }
 
     //Ejercicio 1: Crear y escribir en un archivo
@@ -178,6 +178,18 @@ public class EjerciciosFicheros {
                 String[] palabras = linea.split(",");
             }
             br.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    //copiar imagen a una nueva imagen
+    public static void ejercicio13(String origen, String destino){
+        try{
+            FileInputStream entrada = new FileInputStream(origen);
+            FileOutputStream salida = new FileOutputStream(destino);
+            entrada.transferTo(salida);
+            entrada.close();
+            salida.close();
         }catch (Exception e){
             e.printStackTrace();
         }

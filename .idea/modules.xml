@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/POO/POO.iml" filepath="$PROJECT_DIR$/POO/POO.iml" />
       <module fileurl="file://$PROJECT_DIR$/POOEjercicios/POOEjercicios.iml" filepath="$PROJECT_DIR$/POOEjercicios/POOEjercicios.iml" />
       <module fileurl="file://$PROJECT_DIR$/POOFicheros/POOFicheros.iml" filepath="$PROJECT_DIR$/POOFicheros/POOFicheros.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PlantUml/PlantUml.iml" filepath="$PROJECT_DIR$/PlantUml/PlantUml.iml" />
     </modules>
   </component>
 </project>

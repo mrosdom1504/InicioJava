@@ -1,0 +1,13 @@
+@startuml
+class Biblioteca {
+    -nombre: String
+    -ubicacion: String
+}
+
+class Libro {
+    -titulo: String
+    -autor: String
+}
+' Relación de agregación (◇)
+Biblioteca "1 " o-- "0,m " Libro : contiene
+@enduml

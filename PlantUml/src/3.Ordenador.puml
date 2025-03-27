@@ -1,0 +1,21 @@
+@startuml
+class Ordenador {
+    -marca: String
+    -modelo: String
+    --
+    +encender(): void
+    +apagar(): void
+}
+
+class Procesador {
+    -marca: String
+    -frecuenciaGHz: double
+}
+
+class MemoriaRam {
+    -capacidadGB: int
+    -tipo: String
+}
+Ordenador "1  " *-- "1" Procesador : tiene
+Ordenador "1" *-- "1,m  " MemoriaRam : posee
+@enduml
