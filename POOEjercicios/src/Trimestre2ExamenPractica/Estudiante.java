@@ -1,12 +1,15 @@
 package Trimestre2ExamenPractica;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Estudiante {
     private String nombre;
     private int asignaturas;
     private int notas;
     private double[][] calificaciones;
+    HashMap<String, ArrayList<Integer>> pepe;
 
     public Estudiante(String nombre, int asignaturas, int notas) {
         this.nombre = nombre;
