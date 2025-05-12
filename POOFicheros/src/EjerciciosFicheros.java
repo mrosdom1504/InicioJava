@@ -1,11 +1,12 @@
 import java.io.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class EjerciciosFicheros {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        ejercicio13("C:\\Users\\usuario\\IdeaProjects\\InicioJava\\img.png", "C:\\Users\\usuario\\IdeaProjects\\InicioJava\\imgNueva.png");
+        ejercicio12();
     }
 
     //Ejercicio 1: Crear y escribir en un archivo
@@ -176,6 +177,7 @@ public class EjerciciosFicheros {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] palabras = linea.split(",");
+                System.out.println(Arrays.toString(palabras));
             }
             br.close();
         }catch (Exception e){

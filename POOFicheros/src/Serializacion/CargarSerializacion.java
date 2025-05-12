@@ -8,7 +8,7 @@ import java.io.ObjectInputStream;
 public class CargarSerializacion {
     public static void main(String[] args) {
         try{
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\Users\\usuario\\IdeaProjects\\InicioJava\\POOFicheros\\src\\Serializacion\\persona.dat"));
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\Users\\rossi\\IdeaProjects\\InicioJava\\POOFicheros\\src\\Serializacion\\persona.dat"));
             System.out.println(ois.readObject());
             ois.close();
         }catch (IOException e){
@@ -16,6 +16,5 @@ public class CargarSerializacion {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
